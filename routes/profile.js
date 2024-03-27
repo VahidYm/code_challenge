@@ -2,31 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
-
-const profiles = [
-  {
-    "id": 1,
-    "name": "A Martinez",
-    "description": "Adolph Larrue Martinez III.",
-    "mbti": "ISFJ",
-    "enneagram": "9w3",
-    "variant": "sp/so",
-    "tritype": 725,
-    "socionics": "SEE",
-    "sloan": "RCOEN",
-    "psyche": "FEVL",
-    "image": "https://soulverse.boo.world/images/1.png",
-  }
-];
+const profileController = require('../api/profile/profile.controller');
+const profileValidator = require('../validators/profile.validator');
 
 module.exports = function() {
-
-  router.get('/*', function(req, res, next) {
-    res.render('profile_template', {
-      profile: profiles[0],
-    });
-  });
-
+  router.post('', profileValidator.newProfileValidator, profileController.newProfile);
+  router.get('/:profile_id?', profileController.getProfile);
+  
   return router;
 }
-
