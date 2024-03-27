@@ -1,7 +1,7 @@
 # Code Challenge
 ## Requirements
 - Node 18.x or higher
-- npm
+- yarn or npm
 
 ## Get started
 Install packages by running the following:
@@ -20,4 +20,4 @@ To run the server:
 $ yarn start
 ```
 Now you can access the app in your browser: `localhost:3030`  
-Or send request by postman: `Boo.postman_collection.json` file
+Or send requests by postman: `Boo.postman_collection.json` file
